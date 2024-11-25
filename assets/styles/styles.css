@@ -1,3 +1,8 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -6,23 +11,4 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
-}
-.container {
-    text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.text-display {
-    margin-bottom: 20px;
-    font-size: 18px;
-}
-.input-area {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-}
-.stats {
-    margin-top: 20px;
 }
