@@ -83,9 +83,29 @@ document.addEventListener('DOMContentLoaded', function() {
         return Math.round(correctWords / minutes);
     }
 
+    function updateTypingFeedback() {
+        const sampleWords = sampleTextDiv.textContent.split(' ');
+        const userWords = userInput.value.split(' ');
+
+        let feedbackHTML = '';
+
+        for (let i = 0; i < sampleWords.length; i++) {
+            if (userWords[i] === undefined) {
+                feedbackHTML += `<span>${sampleWords[i]}</span> `;
+            } else if (userWords[i] === sampleWords[i]) {
+                feedbackHTML += `<span style="color: blue;">${sampleWords[i]}</span> `;
+            } else {
+                feedbackHTML += `<span style="color: red;">${sampleWords[i]}</span> `;
+            }
+        }
+
+        sampleTextDiv.innerHTML = feedbackHTML.trim();
+    }
+
     startButton.addEventListener('click', startTest);
     stopButton.addEventListener('click', stopTest);
     difficultySelect.addEventListener('change', updateSampleText);
+    userInput.addEventListener('input', updateTypingFeedback);
 
     // Initialize with a random text from the default difficulty level
     updateSampleText();
